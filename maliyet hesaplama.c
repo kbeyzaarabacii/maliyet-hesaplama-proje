@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-struct person   //kişinin bilgilerini alabilmek için kullanıldı.
+struct person   //kiÅŸinin bilgilerini alabilmek iÃ§in kullanÄ±ldÄ±.
 {
     char ad[30];
     int yas;
     float butce;
 };
 
-struct araba    //arac bilgilerini almak için kullanıldı. 
+struct araba    //arac bilgilerini almak iÃ§in kullanÄ±ldÄ±. 
 {
     float litre;
     float km;
 };
 
-//fonksiyonların prototipleri
+//fonksiyonlarÄ±n prototipleri
 
 void araba(struct person p1);      
 void bisiklet(struct person p1);
@@ -33,7 +33,7 @@ int main()      //ana fonksiyonumuz
     printf("--------------------------------------------------\n");
 
     printf("Ad soyad: ");
-    scanf(" %[^\n]s", p1.ad);  // "%[^\n]s" ifadesini scanfte ad soyadı boşlukla alabilmek için kullanıldı.
+    scanf(" %[^\n]s", p1.ad);  // "%[^\n]s" ifadesini scanfte ad soyadÄ± boÅŸlukla alabilmek iÃ§in kullanÄ±ldÄ±.
 
     printf("Yas: ");
     scanf("%d", &p1.yas);
@@ -43,13 +43,13 @@ int main()      //ana fonksiyonumuz
 
     printf("\n\nBilgileriniz basariyla kaydedildi!\n");
     
-    //kullanıcı bilgileri ekrana yazdırıldı.
+    //kullanÄ±cÄ± bilgileri ekrana yazdÄ±rÄ±ldÄ±.
     printf("\nAd Soyad\t: %s\n", p1.ad);    
     printf("Yas     \t: %d\n", p1.yas);
     printf("Gunluk butce\t: %.2f TL\n", p1.butce);
    
 
-    do    // '0' girilene kadar seçim yapılabilmesi için oluşturuldu.
+    do    // '0' girilene kadar seÃ§im yapÄ±labilmesi iÃ§in oluÅŸturuldu.
      {
         printf("\n\nLutfen kullanmak istediginiz araci seciniz:\n");
         printf("--------------------------------------------------\n");
@@ -63,12 +63,12 @@ int main()      //ana fonksiyonumuz
 
        
         
-        switch (secim)   // fonksiyonlar case'ler içerisine çağırıldı.
+        switch (secim)   // fonksiyonlar case'ler iÃ§erisine Ã§aÄŸÄ±rÄ±ldÄ±.
 	   {
         case 1:
-            if (p1.yas >= 18)   //kullanıcı 18 yaşından küçükse araç kullanamaz.
+            if (p1.yas >= 18)   //kullanÄ±cÄ± 18 yaÅŸÄ±ndan kÃ¼Ã§Ã¼kse araÃ§ kullanamaz.
 		{
-                araba(p1); //struct person p1'den dolayı (p1)
+                araba(p1); //struct person p1'den dolayÄ± (p1)
             } else
 		{
                 printf("\n\n UYARI: Araba kullanabilecek yas araliginda degilsiniz! \n");
@@ -95,14 +95,14 @@ int main()      //ana fonksiyonumuz
             printf("\n\n Gecersiz secim. Lutfen tekrar deneyiniz. \n");
             break;
       }
-    } while (secim != 0);  // seçim '0' ise çıkış yapılır.
+    } while (secim != 0);  // seÃ§im '0' ise Ã§Ä±kÄ±ÅŸ yapÄ±lÄ±r.
 
     return 0;
 }
 
 void araba(struct person p1) 
 {
-    struct araba arac;   //arac bilgileri alındı.
+    struct araba arac;   //arac bilgileri alÄ±ndÄ±.
     float parkUcret, ucretF, ucretE, toplam = 0;   
     float karbonSalinimi = 0;
     int aracSecim, parkSayisi, yakitFiyat = 30;
@@ -122,8 +122,8 @@ void araba(struct person p1)
     	  printf("\n1 kilometre yol icin elektrik ucreti: 2.5 TL\n");
         printf("\nToplam kac kilometre yol aldiniz? ");
         scanf("%f", &arac.km);                  
-        ucretE = 0.15 * 2.5 * arac.km;       //Elektrikli aracın kilometreye bağlı ulaşım maliyeti. 0.15 -> 1 kilometre kw degeri
-        karbonSalinimi = arac.km * 0.05;     // Elektrikli aracın kilometreye bağlı karbon salınımı. 0.05-> Elektrikli araç karbon salınımı
+        ucretE = 0.15 * 2.5 * arac.km;       //Elektrikli aracÄ±n kilometreye baÄŸlÄ± ulaÅŸÄ±m maliyeti. 0.15 -> 1 kilometre kw degeri
+        karbonSalinimi = arac.km * 0.05;     // Elektrikli aracÄ±n kilometreye baÄŸlÄ± karbon salÄ±nÄ±mÄ±. 0.05-> Elektrikli araÃ§ karbon salÄ±nÄ±mÄ±
         printf("\nElektrikli arac ortalama yol maliyeti: %.2f TL", ucretE);
         
         printf("\nOtopark giris ucreti: 150.75 TL");
@@ -132,7 +132,7 @@ void araba(struct person p1)
         printf("\n----------------------------------------------------");
         printf("\nElektrikli arac ortalama karbon salinimi: %.2f kg CO2", karbonSalinimi);
         
-        parkUcret = parkSayisi * 150.75;      //Park ücreti hesaplama.
+        parkUcret = parkSayisi * 150.75;      //Park Ã¼creti hesaplama.
         toplam = ucretE + parkUcret;          //Toplam maliyet hesaplama.
         break;
 
@@ -142,8 +142,8 @@ void araba(struct person p1)
         scanf("%f", &arac.km);
         printf("Aracinizin 1 kilometrede tukettigi yakit miktarini (litre) giriniz: ");
         scanf("%f", &arac.litre);
-        ucretF = yakitFiyat * arac.km * arac.litre;            //Fosil yakıtlı aracın kilometreye bağlı ulaşım maliyeti.
-        karbonSalinimi = arac.km * arac.litre * 2.31;          //Fosil yakıtlı aracın kilometreye bağlı karbon salınımı. 2.31 kg-> Fosil yakıtlı araç karbon salınımı
+        ucretF = yakitFiyat * arac.km * arac.litre;            //Fosil yakÄ±tlÄ± aracÄ±n kilometreye baÄŸlÄ± ulaÅŸÄ±m maliyeti.
+        karbonSalinimi = arac.km * arac.litre * 2.31;          //Fosil yakÄ±tlÄ± aracÄ±n kilometreye baÄŸlÄ± karbon salÄ±nÄ±mÄ±. 2.31 kg-> Fosil yakÄ±tlÄ± araÃ§ karbon salÄ±nÄ±mÄ±
         printf("\nFosil yakitli arac ortalama yol maliyeti: %.2f TL", ucretF);
         
         printf("\nGunluk otopark giris ucreti: 150.75 TL");
@@ -152,8 +152,8 @@ void araba(struct person p1)
         printf("\n----------------------------------------------------");
         printf("\nFosil yakitli arac ortalama karbon salinimi: %.2f kg CO2", karbonSalinimi);
         
-        parkUcret = parkSayisi * 150.75;      //Park ücreti hesaplama.
-        toplam = ucretF + parkUcret;          //Toplam ücreti hesaplama.
+        parkUcret = parkSayisi * 150.75;      //Park Ã¼creti hesaplama.
+        toplam = ucretF + parkUcret;          //Toplam Ã¼creti hesaplama.
         break;
 
         default:
@@ -163,7 +163,7 @@ void araba(struct person p1)
 
     printf("\nToplam arac kullanim maliyeti: %.2f TL", toplam);
     
-    if (toplam > p1.butce)   //bütçeyi aşıyorsa uyarı verir.
+    if (toplam > p1.butce)   //bÃ¼tÃ§eyi aÅŸÄ±yorsa uyarÄ± verir.
       {
         printf("\n UYARI: Toplam maliyet %.2f TL, butcenizi asiyor! ", toplam);
         printf("\n----------------------------------------------------");
@@ -216,7 +216,7 @@ void taksi(struct person p1)
     printf("Toplam kac kilometre yol aldiniz? ");
     scanf("%f", &km);
     toplam = (acilisUcret * binis) + (km * kmUcret);    //Toplam maliyeti hesaplama.
-    karbonSalinimi = km * 2.31;                         //Taksi ortalama karbon salınımı hesaplama.   2.31-> fosil yakıtlı taksi ortalama karbon salınımı
+    karbonSalinimi = km * 2.31;                         //Taksi ortalama karbon salÄ±nÄ±mÄ± hesaplama.   2.31-> fosil yakÄ±tlÄ± taksi ortalama karbon salÄ±nÄ±mÄ±
     printf("\n----------------------------------------------------"); 
     printf("\nToplam maliyetiniz: %.2f TL", toplam);
     printf("\nTaksi ortalama karbon salinimi: %.2f kg CO2", karbonSalinimi);
@@ -267,7 +267,7 @@ void otobus(struct person p1)
         return;
      }
 
-    karbonSalinimi = kartKullanim * 0.1;   //Otobüs karbon salınımı hesaplama.  0.1 -> kişi başına düşen ortalama karbon salınımı.
+    karbonSalinimi = kartKullanim * 0.1;   //OtobÃ¼s karbon salÄ±nÄ±mÄ± hesaplama.  0.1 -> kiÅŸi baÅŸÄ±na dÃ¼ÅŸen ortalama karbon salÄ±nÄ±mÄ±.
     printf("\nOtobus kullanim maliyeti: %.2f TL", toplam);
     printf("\nOtobus karbon salinimi: %.2f kg CO2", karbonSalinimi);
    
