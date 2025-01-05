@@ -33,7 +33,7 @@ int main()      //ana fonksiyonumuz
     printf("--------------------------------------------------\n");
 
     printf("Ad soyad: ");
-    scanf(" %[^\n]s", p1.ad);  // "%[^\n]s" ifadesini scanfte ad soyadı boşlukla alabilmek için kullanıldı.
+    scanf(" %[^\n]s", p1.ad);  // "%[^\n]s" ifadesini scanfte ad soyadı boşluklu alabilmek için kullanıldı.
 
     printf("Yas: ");
     scanf("%d", &p1.yas);
